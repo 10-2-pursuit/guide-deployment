@@ -125,16 +125,19 @@ Scroll down your database view to `Connections`. Keep this view open.
 
 ![Database connections view](./assets/see-connection-values-from-pg-app.png)
 
-In a new tab or window, return to your Dashboard and select your app. Choose `Environment`. You will enter the key-value pairs in the section `Environmental Variables`.
+You may recognize the values here in the database match the variables we're already using in our `db/dbConfig.js` such as, `Port`, `Database`, `UserName`
 
-You will have to copy over the variables into your app.
+Additionally - Render requires a `PG_PASSWORD`enviroment variable and a `DATABASE_URL` environment variable.  We did not _need_ these when working locally but when we deploy our DB this is a must.
+
+If you do not already have one make sure you add a `PG_PASSWORD` and `DATABASE_URL` variable to your `db/dbConfig.js`
+
+In a new tab or window, return to your Dashboard and select your app. Choose `Environment`. 
+You will enter the key-value pairs in the section `Environmental Variables` for _every value from your Render Database_.  Think of this as your _deployed .env_ file with all the values Render gave to us when we created our database
 
 The key names must match what is in the app. Check the `db/dbConfig.js` file.
 
-You will need to enter the following:
-
 - `DATABASE_URL` : use the value for `Internal Database URL`
-
+  
 ![Add key values for environmental variables for server app](./assets/add-environmental-variables-to-app.png)
 
 Then save changes. You must wait a few minutes for the changes to take effect.
